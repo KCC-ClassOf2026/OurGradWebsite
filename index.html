@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Senior Video 2026</title>
+
+<style>
+  :root {
+    /* ===== EDIT THESE ===== */
+    --bg-color: #0f172a;
+    --text-color: white;
+    --accent: #38bdf8;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .countdown {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: var(--accent);
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+
+  iframe, video {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .box {
+    padding: 30px;
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+
+  .small {
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🎓 Senior Video 2026</h1>
+
+<p class="small">Scan the QR code to view this page</p>
+
+<div class="countdown" id="countdown">Loading countdown...</div>
+
+<div class="video-container">
+
+  <!-- ===== YOUTUBE OPTION ===== -->
+  <!-- Replace VIDEO_ID when ready -->
+  <!--
+  <iframe 
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+  -->
+
+  <!-- ===== MP4 OPTION ===== -->
+  <!--
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  -->
+
+  <div class="box">
+    Video will appear here 🎬
+  </div>
+
+</div>
+
+<script>
+/* ===== EDIT THIS DATE ===== */
+const launchDate = new Date("2026-05-23T00:00:00").getTime();
+
+const countdownEl = document.getElementById("countdown");
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = launchDate - now;
+
+  if (distance <= 0) {
+    countdownEl.innerHTML = "🎉 Video is live!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdownEl.innerHTML =
+    `${days}d ${hours}h ${minutes}m ${seconds}s until release`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
