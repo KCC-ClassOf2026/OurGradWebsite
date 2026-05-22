@@ -80,8 +80,6 @@
 <img src="SeniorGroupPhoto.JPG" alt="Group Photo" class="group-photo">
 
 <h1>=Our Graduation Video=</h1>
-  
-<div class="countdown" id="countdown">Loading countdown...</div>
 
 <p>
   After years of collecting memories together and saving them in videos and photos, we can finally put them together to create a montage of our years together! 
@@ -110,34 +108,6 @@
   <p>You can also DOWNLOAD THE VIDEO <a href="https://drive.google.com/drive/folders/1lj9b9EBW78m8hkmXbemgJd75lw6YgGjX?usp=share_link">here</a></p>
 
 </div>
-
-<script>
-/* ===== EDIT THIS DATE ===== */
-const launchDate = new Date("2026-05-21T17:00:00").getTime();
-
-const countdownEl = document.getElementById("countdown");
-
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = launchDate - now;
-
-  if (distance <= 0) {
-    countdownEl.innerHTML = "Video is live!";
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  countdownEl.innerHTML =
-    `${days}d ${hours}h ${minutes}m ${seconds}s until the ceremony!!!`;
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
 
 
 </body>
